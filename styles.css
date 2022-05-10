@@ -1,8 +1,8 @@
 :root {
-    --DarkColor1: rgb(63, 0, 60);
-    --Color1: rgb(109, 0, 103);
-    --LightColor1: rgb(255, 212, 253);
-    --LightColor2: rgb(255, 185, 252);
+    --DarkColor1: rgb(63, 0, 146);
+    --Color1: rgb(111, 0, 255);
+    --LightColor1: rgb(232, 214, 255);
+    --LightColor2: rgb(202, 161, 255);
 }
 
 * {
