@@ -24,6 +24,7 @@ body {
     background-color: var(--LightColor1);
     max-width: 1300px;
     margin: auto;
+    height: 100vh;
 }
 
 .main__header {
@@ -36,7 +37,7 @@ body {
 }
 
 .main__content {
-    margin: 10px;
+    margin: 0px 10px 25px 10px;
     padding: 10px;
     border-radius: 10px;
     background-color: var(--LightColor2);
@@ -55,4 +56,11 @@ body {
 .get-recomendations-btn:hover {
     color: white;
     background-color: var(--DarkColor1);
+}
+
+.movie-name-input {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 10px;
 }
