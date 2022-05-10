@@ -1,0 +1,58 @@
+:root {
+    --DarkColor1: rgb(63, 0, 60);
+    --Color1: rgb(109, 0, 103);
+    --LightColor1: rgb(255, 212, 253);
+    --LightColor2: rgb(255, 185, 252);
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+body {
+    background-color: var(--Color1);
+}
+
+.main__container {
+    background-color: var(--LightColor1);
+    max-width: 1300px;
+    margin: auto;
+}
+
+.main__header {
+    text-align: center;
+    padding: 100px 0px 50px 0px;
+}
+
+.main__header h1{
+    font-weight: 600;
+}
+
+.main__content {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--LightColor2);
+}
+
+.get-recomendations-btn {
+    font-weight: 600;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color: var(--Color1);
+    cursor: pointer;
+}
+
+.get-recomendations-btn:hover {
+    color: white;
+    background-color: var(--DarkColor1);
+}
