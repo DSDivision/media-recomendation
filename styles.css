@@ -1,5 +1,7 @@
 :root {
     --DarkColor1: rgb(63, 0, 146);
+    --DarkColor2: rgb(36, 0, 83);
+    --DarkColor3: rgb(18, 0, 41);
     --Color1: rgb(111, 0, 255);
     --LightColor1: rgb(232, 214, 255);
     --LightColor2: rgb(202, 161, 255);
@@ -10,6 +12,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    color: white;
     box-sizing: border-box;
     line-height: 1.5;
     font-weight: 400;
@@ -17,11 +20,11 @@
 }
 
 body {
-    background-color: var(--Color1);
+    background-color: black;
 }
 
 .main__container {
-    background-color: var(--LightColor1);
+    background-color: var(--DarkColor3);
     max-width: 1300px;
     margin: auto;
     height: 100vh;
@@ -40,7 +43,7 @@ body {
     margin: 0px 10px 25px 10px;
     padding: 10px;
     border-radius: 10px;
-    background-color: var(--LightColor2);
+    background-color: var(--DarkColor2);
 }
 
 .get-recomendations-btn {
@@ -55,7 +58,7 @@ body {
 
 .get-recomendations-btn:hover {
     color: white;
-    background-color: var(--DarkColor1);
+    background-color: var(--DarkColor2);
 }
 
 .movie-name-input {
@@ -63,4 +66,33 @@ body {
     margin: 10px 0px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.thumbnail img{
+    width: 120px;
+    vertical-align: text-top;
+}
+
+.result {
+    display: flex;
+    padding: 5px;
+    background-color: var(--Color1);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.thumbnail {
+    padding: 5px;
+}
+
+.title {
+
+}
+
+.text {
+    padding: 5px;
+}
+
+.rating {
+
 }
