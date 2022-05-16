@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 /* THIS CODE IS FOR TESTING*/
 /*
 fetch("http://127.0.0.1:8000/recommendation/Heat", {method: "GET"})
@@ -71,4 +70,3 @@ function getR(e){
                 document.getElementById("results").innerHTML = output //append the result HTMLs to the page 
         })
 }
->>>>>>> Stashed changes
