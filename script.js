@@ -1,5 +1,5 @@
 /* THIS CODE IS FOR TESTING*/
-
+/*
 fetch("http://127.0.0.1:8000/recommendation/Heat", {method: "GET"})
     .then(res => res.json())
     .then(data => {
@@ -7,7 +7,7 @@ fetch("http://127.0.0.1:8000/recommendation/Heat", {method: "GET"})
             console.log(data[k])
         }
     })
-
+*/
 
 
 /* Getting the input */
