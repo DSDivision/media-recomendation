@@ -1,4 +1,6 @@
-fetch("http://127.0.0.1:8000/recommendation/", {method: "GET"})
+/* THIS CODE IS FOR TESTING*/
+
+fetch("http://127.0.0.1:8000/recommendation/Heat", {method: "GET"})
     .then(res => res.json())
     .then(data => {
         for (var k in data){
@@ -6,55 +8,48 @@ fetch("http://127.0.0.1:8000/recommendation/", {method: "GET"})
         }
     })
 
-document.getElementById("get-recomendations-btn").addEventListener("click", getR);
 
-function getR(){
-    fetch("http://127.0.0.1:8000/recommendation/", {
+
+/* Getting the input */
+document.getElementById("get-recomendations").addEventListener("submit", getR);
+
+/* function to get te results and format it to a displayable div */
+function getR(e){
+    e.preventDefault(); //prevent the default reaction from form submit
+
+    let title = document.getElementById("title").value;     //title = the inputed title
+    // console.log(title)   // display the title in console
+    fetch(`http://127.0.0.1:8000/recommendation/${title}`, { //fetch the recommendations for "title"
         method: "GET"
     })
-        .then(res => res.json())
+        .then(res => res.json()) //format the results to json
         .then(data => {
             let output = "";
+            /* Loop over the recommendations */
             for (var r in data){
+                /* Append the HTML to "output" */
                 output += `
                 <div class="result">
                     <div class="thumbnail">
-                        <img src="/movie_test_thumbnail.jpg" alt="thumbnail"></img>
+                        <img src="${data[r].poster_path}" alt="thumbnail"></img>
                     </div>
                     <div class="text">
                         <h2 class="title">
-                            ${data[r].title} ${data[r].release_year}
+                            ${data[r].title} ${data[r].release_date}
                         </h2>
                         <h3>
                             <div class="rating">
-                                Genre: ${data[r].listed_in}
+                                Rating: ${data[r].vote_average}
                             </div>
+                            Genre: ${data[r].genre_ids}
                         </h3>
-                        ${data[r].description}
-                        <a href="https://www.imdb.com/">IMDb</a>
+                        ${data[r].overview}
+                        <a href="${data[r].imdb_path}">IMDb</a>
                     </div>
                 </div>
                 `;
             };
 
-            document.getElementById("results").innerHTML = output
+            document.getElementById("results").innerHTML = output //append the result HTMLs to the page 
         })
 }
-
-/*
-<div class="result">
-    <div class="thumbnail">
-        <img src="/movie_test_thumbnail.jpg" alt="thumbnail"></img>
-    </div>
-    <div class="text">
-        <h3 class="title">
-            Title of the movie
-            <div class="rating">
-                8/10
-            </div>
-        </h3>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatum suscipit doloremque quidem tenetur, necessitatibus molestiae quae corrupti maxime ratione. Iure hic nihil animi, voluptates maxime quo eligendi possimus. Vero.
-        <a href="https://www.imdb.com/">IMDb</a>
-    </div>
-</div>
-*/

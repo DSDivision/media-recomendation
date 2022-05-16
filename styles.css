@@ -27,7 +27,7 @@ body {
     background-color: var(--DarkColor3);
     max-width: 1300px;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .main__header {
