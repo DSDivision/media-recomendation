@@ -1,3 +1,4 @@
+
 /* THIS CODE IS FOR TESTING*/
 /*
 fetch("http://127.0.0.1:8000/recommendation/Heat", {method: "GET"})
@@ -22,7 +23,13 @@ function getR(e){
     fetch(`http://127.0.0.1:8000/recommendation/${title}`, { //fetch the recommendations for "title"
         method: "GET"
     })
-        .then(res => res.json()) //format the results to json
+        .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return response.json();
+        })
+
         .then(data => {
             let output = "";
             /* Loop over the recommendations */
@@ -35,7 +42,8 @@ function getR(e){
                     </div>
                     <div class="text">
                         <h2 class="title">
-                            ${data[r].title} ${data[r].release_date}
+                            ${data[r].title} (${data[r].release_date})
+
                         </h2>
                         <h3>
                             <div class="rating">
@@ -51,5 +59,25 @@ function getR(e){
             };
 
             document.getElementById("results").innerHTML = output //append the result HTMLs to the page 
+        })
+        .catch(error=>{
+            let output = "";
+            output += `
+                <div class="result">
+                    <div class="thumbnail">
+                        <img src="download.jfif" alt="error icon"></img>
+                    </div>
+                    <div class="text">
+                        <h2 class="title">
+                            Error: Invalid Input
+                        </h2>
+                        <div>
+                            Please try again. (Remember to allow CORS)
+                        </div>
+                        Example: Shrek, Harry Potter, Rush Hour,...
+                    </div>
+                </div>
+                `;
+                document.getElementById("results").innerHTML = output //append the result HTMLs to the page 
         })
 }
