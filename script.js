@@ -63,12 +63,18 @@ function getR(e){
             output += `
                 <div class="result">
                     <div class="thumbnail">
-                        <img src="/error_icon.png" alt="error icon"></img>
+                        <img src="download.jfif" alt="error icon"></img>
                     </div>
                     <div class="text">
                         <h2 class="title">
                             Error: Invalid Input
                         </h2>
+                        <h3>
+                            <div class="rating">
+                                Please try again
+                            </div>
+                            Example: Shrek, Harry Potter, Rush Hour,...
+                        </h3>
                     </div>
                 </div>
                 `;
