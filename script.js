@@ -29,6 +29,7 @@ function getR(e){
         }
         return response.json();
         })
+
         .then(data => {
             let output = "";
             /* Loop over the recommendations */
@@ -42,6 +43,7 @@ function getR(e){
                     <div class="text">
                         <h2 class="title">
                             ${data[r].title} (${data[r].release_date})
+
                         </h2>
                         <h3>
                             <div class="rating">
