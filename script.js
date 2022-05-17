@@ -41,7 +41,7 @@ function getR(e){
                     </div>
                     <div class="text">
                         <h2 class="title">
-                            ${data[r].title} ${data[r].release_date}
+                            ${data[r].title} (${data[r].release_date})
                         </h2>
                         <h3>
                             <div class="rating">
@@ -69,12 +69,10 @@ function getR(e){
                         <h2 class="title">
                             Error: Invalid Input
                         </h2>
-                        <h3>
-                            <div class="rating">
-                                Please try again
-                            </div>
-                            Example: Shrek, Harry Potter, Rush Hour,...
-                        </h3>
+                        <div>
+                            Please try again. (Remember to allow CORS)
+                        </div>
+                        Example: Shrek, Harry Potter, Rush Hour,...
                     </div>
                 </div>
                 `;
