@@ -23,7 +23,12 @@ function getR(e){
     fetch(`http://127.0.0.1:8000/recommendation/${title}`, { //fetch the recommendations for "title"
         method: "GET"
     })
-        .then(res => res.json()) //format the results to json
+        .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return response.json();
+        })
         .then(data => {
             let output = "";
             /* Loop over the recommendations */
@@ -53,7 +58,7 @@ function getR(e){
 
             document.getElementById("results").innerHTML = output //append the result HTMLs to the page 
         })
-        .catch((error)=>{
+        .catch(error=>{
             let output = "";
             output += `
                 <div class="result">
