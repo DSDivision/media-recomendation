@@ -21,11 +21,17 @@
 }
 
 body {
+    background: url(/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: black;
 }
 
 .main__container {
     background-color: var(--DarkColor3);
+    background: transparent;
     max-width: 1300px;
     margin: auto;
     min-height: 100vh;
@@ -33,7 +39,7 @@ body {
 
 .main__header {
     text-align: center;
-    padding: 100px 0px 50px 0px;
+    padding: 100px 10px 50px 10px;
 }
 
 .main__header h1{
@@ -89,4 +95,12 @@ body {
 
 .text {
     padding: 5px;
+}
+
+
+/* These apply when viewing on a smaller screen */
+@media only screen and (max-width: 960px){
+    .result{
+        display: block;
+    }
 }
