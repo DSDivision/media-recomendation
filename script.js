@@ -19,14 +19,18 @@ function getR(e){
     e.preventDefault(); //prevent the default reaction from form submit
 
     let title = document.getElementById("title").value;     //title = the inputed title
+
+    document.getElementById('loading__element').style = "display: flex;";
+
     // console.log(title)   // display the title in console
     fetch(`http://127.0.0.1:8000/recommendation/${title}`, { //fetch the recommendations for "title"
-        method: "GET"
+        method: "GET",
     })
         .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not OK');
         }
+        document.getElementById('loading__element').style.display = "none";
         return response.json();
         })
 
@@ -61,6 +65,7 @@ function getR(e){
             document.getElementById("results").innerHTML = output //append the result HTMLs to the page 
         })
         .catch(error=>{
+            document.getElementById('loading__element').style.display = "none";
             let output = "";
             output += `
                 <div class="result">
